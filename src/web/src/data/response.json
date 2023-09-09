@@ -1,0 +1,316 @@
+[
+    {
+      "Steps": [
+        [
+          "Biel"
+        ],
+        [
+          "Biel",
+          "Bern"
+        ],
+        [
+          "Biel",
+          "Bern",
+          "Biel",
+          "Thun",
+          "Lausanne"
+        ],
+        [
+          "Biel",
+          "Bern",
+          "Biel",
+          "Thun",
+          "Lausanne",
+          "Meiringen",
+          "Hamburg"
+        ]
+      ],
+      "Id": "58d2fbb4-3c61-4860-8c84-1b97a92ef9ab",
+      "Name": "Biel",
+      "Location": [
+        47.1480,
+        8.0400
+      ]
+    },
+    {
+      "Steps": [
+        [
+          "Bern"
+        ],
+        [
+          "Bern",
+          "Biel",
+          "Thun",
+          "Lausanne"
+        ],
+        [
+          "Bern",
+          "Biel",
+          "Thun",
+          "Lausanne",
+          "Bern",
+          "Meiringen",
+          "Hamburg"
+        ],
+        [
+          "Bern",
+          "Biel",
+          "Thun",
+          "Lausanne",
+          "Bern",
+          "Meiringen",
+          "Hamburg",
+          "Paris"
+        ]
+      ],
+      "Id": "6b87af21-571a-4224-a774-5e56e4edfd87",
+      "Name": "Bern",
+      "Location": [
+        46.9480,
+        7.4474
+      ]
+    },
+    {
+      "Steps": [
+        [
+          "Lausanne"
+        ],
+        [
+          "Lausanne",
+          "Biel"
+        ],
+        [
+          "Lausanne",
+          "Biel",
+          "Bern"
+        ],
+        [
+          "Lausanne",
+          "Biel",
+          "Bern",
+          "Thun",
+          "Lausanne"
+        ]
+      ],
+      "Id": "95e31edc-a459-4d07-b9b1-0971a5e11c9a",
+      "Name": "Lausanne",
+      "Location": [
+        46.516,
+        6.6328
+      ]
+    },
+    {
+      "Steps": [
+        [
+          "Thun"
+        ],
+        [
+          "Thun",
+          "Meiringen",
+          "Hamburg"
+        ],
+        [
+          "Thun",
+          "Meiringen",
+          "Hamburg",
+          "Paris",
+          "Biel"
+        ],
+        [
+          "Thun",
+          "Meiringen",
+          "Hamburg",
+          "Paris",
+          "Biel",
+          "Marseille",
+          "Basel",
+          "Bern"
+        ]
+      ],
+      "Id": "8aaaa030-4c03-4505-b588-fa26723b05f8",
+      "Name": "Thun",
+      "Location": [
+        46.75118,
+        7.62166
+      ]
+    },
+    {
+      "Steps": [
+        [
+          "Meiringen"
+        ],
+        [
+          "Meiringen"
+        ],
+        [
+          "Meiringen"
+        ],
+        [
+          "Meiringen"
+        ]
+      ],
+      "Id": "ed28f0ed-7e21-40de-a512-3a843d09edda",
+      "Name": "Meiringen",
+      "Location": [
+        46.72709 ,
+        8.1872
+      ]
+    },
+    {
+      "Steps": [
+        [
+          "Basel"
+        ],
+        [
+          "Basel",
+          "Hamburg"
+        ],
+        [
+          "Basel",
+          "Hamburg",
+          "Paris",
+          "Biel"
+        ],
+        [
+          "Basel",
+          "Hamburg",
+          "Paris",
+          "Biel",
+          "Marseille",
+          "Basel",
+          "Bern"
+        ]
+      ],
+      "Id": "40ea5b25-2069-40a7-83c3-966834b25e5a",
+      "Name": "Basel",
+      "Location": [
+        47.55839,
+        7.57327
+      ]
+    },
+    {
+      "Steps": [
+        [
+          "Hamburg"
+        ],
+        [
+          "Hamburg",
+          "Paris",
+          "Biel"
+        ],
+        [
+          "Hamburg",
+          "Paris",
+          "Biel",
+          "Marseille",
+          "Basel",
+          "Bern"
+        ],
+        [
+          "Hamburg",
+          "Paris",
+          "Biel",
+          "Marseille",
+          "Basel",
+          "Bern",
+          "Mailand",
+          "Hamburg",
+          "Thun",
+          "Lausanne"
+        ]
+      ],
+      "Id": "d118e2e3-ea88-43a0-8ed5-7eb236540f0d",
+      "Name": "Hamburg",
+      "Location": [
+        53.5502,
+        9.9920
+      ]
+    },
+    {
+      "Steps": [
+        [
+          "Mailand"
+        ],
+        [
+          "Mailand",
+          "Meiringen"
+        ],
+        [
+          "Mailand",
+          "Meiringen"
+        ],
+        [
+          "Mailand",
+          "Meiringen"
+        ]
+      ],
+      "Id": "c5e399d2-15ff-48e7-b76f-dd60e14abfa3",
+      "Name": "Mailand",
+      "Location": [
+        45.46427,
+        9.18951
+      ]
+    },
+    {
+      "Steps": [
+        [
+          "Marseille"
+        ],
+        [
+          "Marseille",
+          "Mailand"
+        ],
+        [
+          "Marseille",
+          "Mailand",
+          "Meiringen"
+        ],
+        [
+          "Marseille",
+          "Mailand",
+          "Meiringen"
+        ]
+      ],
+      "Id": "aac36ccf-6471-458e-8627-5b64b53aa55f",
+      "Name": "Marseille",
+      "Location": [
+        43.296398,
+        5.370000
+      ]
+    },
+    {
+      "Steps": [
+        [
+          "Paris"
+        ],
+        [
+          "Paris",
+          "Marseille",
+          "Basel"
+        ],
+        [
+          "Paris",
+          "Marseille",
+          "Basel",
+          "Mailand",
+          "Hamburg"
+        ],
+        [
+          "Paris",
+          "Marseille",
+          "Basel",
+          "Mailand",
+          "Hamburg",
+          "Meiringen",
+          "Paris",
+          "Biel"
+        ]
+      ],
+      "Id": "887ecb63-5afc-4b6e-9b72-72170b77de6a",
+      "Name": "Paris",
+      "Location": [
+        48.856613,
+        2.352222
+      ]
+    }
+  ]

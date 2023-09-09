@@ -1,0 +1,9 @@
+{
+    "Id": "06c7d7ea-a910-40a5-9159-0056769c173a",
+    "Name": "Biel",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [ "Bern" ]
+}

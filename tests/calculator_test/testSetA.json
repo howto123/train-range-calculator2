@@ -1,0 +1,82 @@
+[
+    {
+      "Name": "Biel",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": [ "Bern" ]
+    },
+    {
+      "Name": "Bern",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": [ "Biel", "Thun", "Lausanne" ]
+    },
+    {
+      "Name": "Lausanne",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": [ "Biel" ]
+    },
+    {
+      "Name": "Thun",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": [ "Meiringen", "Hamburg" ]
+    },
+    {
+      "Name": "Meiringen",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": []
+    },
+    {
+      "Name": "Basel",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": ["Hamburg"]
+    },
+    {
+      "Name": "Hamburg",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": ["Paris", "Biel"]
+    },
+    {
+      "Name": "Mailand",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": ["Meiringen"]
+    },
+    {
+      "Name": "Marseille",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": ["Mailand"]
+    },
+    {
+      "Name": "Paris",
+      "Location": [
+        23.12,
+        -4.3
+      ],
+      "DirectlyReachable": ["Marseille", "Basel"]
+    }
+]
