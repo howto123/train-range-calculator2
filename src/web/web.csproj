@@ -13,4 +13,8 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.32.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\calculator\calculator.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,6 +7,8 @@ using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
+using calculator.Export;
+
 namespace web.Endpoints;
 public static class DefaultApi
 {
@@ -24,8 +26,8 @@ public static class DefaultApi
             var mimeType = "text/json";
 
             //path from project root, NOT relative to this file
-            var path = "./src/data/response.json";
-
+            
+            var path = FileHandler.GetJsonPath();
             var bytes = await File.ReadAllBytesAsync(path);
 
             return Results.File(bytes, mimeType, "dataToBeAddedTo.json");
