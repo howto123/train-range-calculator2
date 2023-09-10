@@ -3,6 +3,8 @@ using System.IO;
 using Microsoft.Extensions.Configuration;
 using calculator.Work;
 
+// this file is not really used as the project is used as a class library and tested by its tests
+
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("calculatorsettings.json")
     .Build();

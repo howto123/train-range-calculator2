@@ -1,1 +1,0 @@
-The idea here is to have StepByStep ready that match the objects we want to create in each round of building another stage. We start with CityIn, create CiteStageTwo's from there and so on. At the end we can use a recursive loop depending on how many stages we want.
