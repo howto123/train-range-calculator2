@@ -24,7 +24,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 {
     TokenManagerOptions fromSettings = new();
     builder.Configuration.GetSection("TokenManager").Bind(fromSettings);
-    o.TokenValidationParameters = new() {
+
+    try
+    {
+        o.TokenValidationParameters = new() {
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
@@ -32,7 +35,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidIssuer = fromSettings.Issuer,
         ValidAudience = fromSettings.Audience,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(fromSettings.SecretKey))
-    };
+        };
+    }
+    catch
+    {
+        throw new Exception("You might have forgotten to set a secret hash key 'SecretKey' in the environment variables");
+    }
+    
 });
 builder.Services.AddAuthorization();
 

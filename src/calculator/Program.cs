@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using calculator.Work;
 
 var configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json")
+    .AddJsonFile("calculatorsettings.json")
     .Build();
 
 var inPath = configuration["inPath"];

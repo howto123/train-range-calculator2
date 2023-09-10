@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{55D02409-B81
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator", "src\calculator\calculator.csproj", "{BEADEBB0-AC7B-49F6-8429-2995C1858C4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web", "src\web\web.csproj", "{122C318D-2505-407C-B41A-22AA371D7C48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +30,14 @@ Global
 		{BEADEBB0-AC7B-49F6-8429-2995C1858C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEADEBB0-AC7B-49F6-8429-2995C1858C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEADEBB0-AC7B-49F6-8429-2995C1858C4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{122C318D-2505-407C-B41A-22AA371D7C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122C318D-2505-407C-B41A-22AA371D7C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122C318D-2505-407C-B41A-22AA371D7C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122C318D-2505-407C-B41A-22AA371D7C48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EFAE484D-9FB1-4813-8E9B-19C26491CDB9} = {2B18B5F7-8904-45D8-9918-F0960E7BEEF5}
 		{BEADEBB0-AC7B-49F6-8429-2995C1858C4C} = {55D02409-B812-46F3-8C65-44AE9D35EBF5}
+		{122C318D-2505-407C-B41A-22AA371D7C48} = {55D02409-B812-46F3-8C65-44AE9D35EBF5}
 	EndGlobalSection
 EndGlobal
