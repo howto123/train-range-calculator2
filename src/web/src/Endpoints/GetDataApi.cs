@@ -16,6 +16,7 @@ public static class GetDataApi
         {
             Task<byte[]> bytes = JsonStreamExporter.GetCityWithStringSteps();
             response.StatusCode = 200;
+            response.ContentType = "text/json";
             await response.Body.WriteAsync(await bytes);
         });
     }
