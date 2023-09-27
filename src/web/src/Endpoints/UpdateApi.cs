@@ -10,23 +10,19 @@ using Microsoft.AspNetCore.Http;
 using calculator.Export;
 
 namespace web.Endpoints;
-public static class DefaultApi
+public static class UpdateApi
 {
     public static void AddEndpoints(WebApplication app)
     {
-        app.MapPost("/api", (HttpRequest request) =>
+        app.MapPost("/api/update", (HttpRequest request) =>
         {
 
             return Results.Ok("Another answer from the server.");
         }).RequireAuthorization();
         
-        app.MapGet("/api", async () =>
+        app.MapGet("/api/update", async () =>
         {
-            Console.WriteLine("request received!");
             var mimeType = "text/json";
-
-            //path from project root, NOT relative to this file
-            
             var path = FileHandler.GetJsonPath();
             var bytes = await File.ReadAllBytesAsync(path);
 

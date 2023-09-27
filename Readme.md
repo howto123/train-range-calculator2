@@ -1,4 +1,5 @@
 ### Run locally:
+
 `dotnet run --project src/web/web.csproj`
 `dotnet watch --project src/web/web.csproj`
 
@@ -6,6 +7,7 @@ publish:
 `dotnet publish -c Release -o out`
 
 ### Run docker locally:
+
 `docker build -t backend .`
 (current build time without caching: 70s)
 
@@ -13,6 +15,7 @@ publish:
 
 
 ### Google cloud run (docker)
+
 tage with project, repo, reponame like here:
 https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling
 
@@ -29,6 +32,7 @@ https://next-k42qgew2la-oa.a.run.app/
 
 
 ### Secrets:
+
 `dotnet user-secrets init`
 `dotnet user-secrets set "key" "value"`
 
@@ -38,15 +42,17 @@ In production these secrets need to be added via environment variables. Nesting 
 
 ### Todo:
 
+ - test if getdata can be consumed by frontend 
  - dotnet run --project src/calculator/calculator.csproj -> Output.json gets created in solution root instead of project root.
  - delete calculator/Program.cs, use it's content elsewhere
  - possibly move calculator/Exceptions to a domain project (which will be a class library)
- - actually embed the logic from calculator into web, think about sensible interfaces first
 
- # /web
+### /web
+
 web is a dotnet web-api to serve endpoints consumed by the next frontend (that is being developped independantly)
 
 We have
- - */api GET* which gives back a json file containing the most up-to-date connections
- - */api POST* which loads up a json from which the latest connections will be computed
- - */api/login POST* which sets a cookie containing a valid bearer token (if the password is correct)
+ - **/api/getdata GET** which gives back a list of CityWithStringSteps in the response-body. This can be consumed by the frontend.
+ - **/api/update GET** which gives back a json file containing the most up-to-date connections
+ - **/api/update POST** which loads up a json from which the latest connections will be computed
+ - **/api/login POST** which sets a cookie containing a valid bearer token (if the password is correct)

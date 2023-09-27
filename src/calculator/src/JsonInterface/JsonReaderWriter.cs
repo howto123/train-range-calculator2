@@ -6,7 +6,7 @@ using calculator.CityTypes;
 namespace calculator.JsonInterface;
 public class JsonReaderWriter
 {
-        public static ICityDirectString ReadOneFromJSON(string pathWithFilename)
+    public static ICityDirectString ReadOneFromJSON(string pathWithFilename)
     // creates city from json file
     {
         var readFromFile = string.Empty;
@@ -30,6 +30,7 @@ public class JsonReaderWriter
         return city ??
             throw new JsonReaderWriterException($"ReadOneFromJSON from {pathWithFilename} failed");
     }
+    
     public static List<ICityDirectString> ReadListFromJSON(string pathWithFilename)
     // creates city from json file
     {
