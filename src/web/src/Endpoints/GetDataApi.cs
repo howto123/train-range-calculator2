@@ -14,10 +14,20 @@ public static class GetDataApi
     {
         app.MapGet("api/getdata", async (HttpRequest request, HttpResponse response) =>
         {
-            Task<byte[]> bytes = JsonStreamExporter.GetCityWithStringSteps();
+            Task<byte[]> bytes = JsonStreamExporter.GetCitiesWithStringSteps();
+            response.StatusCode = 200;
+            response.ContentType = "text/json";
+            await response.Body.WriteAsync(await bytes);
+        });
+
+        app.MapGet("api/getbasedata", async (HttpRequest request, HttpResponse response) =>
+        {
+            Task<byte[]> bytes = JsonStreamExporter.GetCitiesWithDirectString();
             response.StatusCode = 200;
             response.ContentType = "text/json";
             await response.Body.WriteAsync(await bytes);
         });
     }
+
+    
 }

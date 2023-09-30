@@ -42,9 +42,9 @@ In production these secrets need to be added via environment variables. Nesting 
 
 ### Todo:
 
- - test if getdata can be consumed by frontend 
  - dotnet run --project src/calculator/calculator.csproj -> Output.json gets created in solution root instead of project root.
  - delete calculator/Program.cs, use it's content elsewhere
+ - use decent paths, think about where to store them best
  - possibly move calculator/Exceptions to a domain project (which will be a class library)
 
 ### /web
