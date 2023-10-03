@@ -16,7 +16,7 @@ public static class LoginApi
         {
             /* Request body needs to have this shape:
                 {
-                    "password": "mypassword2"
+                    "password": "mypassword"
                 }
             */
             
@@ -33,20 +33,14 @@ public static class LoginApi
                 return Results.Problem("The request-body was not what we expected...", null, 401);
             }
             string? password = pairs?.GetValueOrDefault("password");
-            Console.WriteLine($"The password from request is: {password}");
-            Console.WriteLine($"The secret from app is: {app.Configuration["TokenManager:SecretKey"]}");
-
-            
-            // TODO: make this two setps, do authorization elsewhere and compare to whiteliste-emails from settings
-            // check password, create and return token 
             var secret = app.Configuration["loginpassword"];
 
             if(password?.Equals(secret) ?? false)
             {
                 var claims = new Dictionary<string, string>
                 {
-                    { "key", "value" },
-                    { "key2", "value2" }
+                    { "any who knows the password", "has access to the api" },
+                    { "no special cases", "with special rights" }
                 };
                 
                 // injected because that way it has the required config

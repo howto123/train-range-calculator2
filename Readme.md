@@ -1,7 +1,9 @@
 ### Run locally:
 
 `dotnet run --project src/web/web.csproj`
+
 `dotnet watch --project src/web/web.csproj`
+
 
 publish:
 `dotnet publish -c Release -o out`
@@ -22,6 +24,7 @@ https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling
 Go to google cloud Artifact Registry and get tag name from there. Add actual tag name in the end.
 
 Go to cloud run service, create (or update) service
+
 Set secret TokenManager__SecretKey -> Expose as Environment Variable
 
 result:
@@ -33,8 +36,12 @@ https://next-k42qgew2la-oa.a.run.app/
 
 ### Secrets:
 
+inside the web directory
+
 `dotnet user-secrets init`
+
 `dotnet user-secrets set "key" "value"`
+
 
 In production these secrets need to be added via environment variables. Nesting ist done by using TWO! underscores __ (instead of :) there, as ":" is apparently not supported on all platforms.
 
@@ -46,6 +53,10 @@ In production these secrets need to be added via environment variables. Nesting 
  - delete calculator/Program.cs, use it's content elsewhere
  - use decent paths, think about where to store them best
  - possibly move calculator/Exceptions to a domain project (which will be a class library)
+ - deploy in europe instead of us
+ - inject calculator into endpoints
+ - get rid of unnecessary public modifiers
+ - test is the frontend can still consume these updated endpoints
 
 ### /web
 

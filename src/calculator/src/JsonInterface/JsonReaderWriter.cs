@@ -67,6 +67,14 @@ public class JsonReaderWriter
         toFile.Write(str);
     }
 
+    public static void WriteListToJSON(List<CityJson> list, string pathWithFilename)
+    {
+        string str = JsonSerializer.Serialize(list, new JsonSerializerOptions() {WriteIndented=true}) ?? string.Empty;
+
+        using StreamWriter toFile = new(pathWithFilename);
+        toFile.Write(str);
+    }
+
     public static void WriteStepListToJSON(List<ICityWithSteps> list, string pathWithFilename)
     {
         List<CityWithStringSteps> simplerList = new();

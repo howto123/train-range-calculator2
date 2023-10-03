@@ -1,0 +1,126 @@
+[
+  {
+    "Id": "626ae74f-e3a9-40e1-a8f1-42b0c3121ac6",
+    "Name": "Mamma Mia",
+    "Location": [
+      23.12,
+      -5.3
+    ],
+    "DirectlyReachable": [
+      "Basel"
+    ]
+  },
+  {
+    "Id": "b2b11a69-4b09-4b35-9afb-24acf1dac5bb",
+    "Name": "Biel",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [
+      "Bern"
+    ]
+  },
+  {
+    "Id": "c38b5fcf-5238-4e51-b935-05569f4b1ef8",
+    "Name": "Bern",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [
+      "Biel",
+      "Thun",
+      "Lausanne"
+    ]
+  },
+  {
+    "Id": "ce837c0d-a13a-4ecb-8dd3-1eb79e4732a2",
+    "Name": "Lausanne",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [
+      "Biel"
+    ]
+  },
+  {
+    "Id": "092f544a-3e8d-49ee-bc6c-c6344f9c3498",
+    "Name": "Thun",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [
+      "Meiringen",
+      "Hamburg"
+    ]
+  },
+  {
+    "Id": "f7fd0d9e-0d33-439e-a3e5-80ddad831e72",
+    "Name": "Meiringen",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": []
+  },
+  {
+    "Id": "8571fdcd-3b52-45c3-8c8c-cdeeac8d4e8b",
+    "Name": "Basel",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [
+      "Hamburg"
+    ]
+  },
+  {
+    "Id": "67da588e-b3e0-4b01-aa83-bb8e73e14451",
+    "Name": "Hamburg",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [
+      "Paris",
+      "Biel"
+    ]
+  },
+  {
+    "Id": "b59d4d2f-f837-4ccb-8e29-d0a05fe9892b",
+    "Name": "Mailand",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [
+      "Meiringen"
+    ]
+  },
+  {
+    "Id": "991a3ebe-4e89-4f8a-b6db-14192bc70890",
+    "Name": "Marseille",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [
+      "Mailand"
+    ]
+  },
+  {
+    "Id": "d7033c17-2ab0-4faf-bd7b-b8f827506582",
+    "Name": "Paris",
+    "Location": [
+      23.12,
+      -4.3
+    ],
+    "DirectlyReachable": [
+      "Marseille",
+      "Basel"
+    ]
+  }
+]

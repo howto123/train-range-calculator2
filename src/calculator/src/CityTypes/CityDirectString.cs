@@ -12,6 +12,11 @@ public class CityDirectString : ICityDirectString
     public required double[] Location { get; init; }
     public List<string> DirectlyReachable { get; init;} = new List<string>();
 
+    public CityDirectString()
+    {
+        // parameterless constructor needed for api endpoint
+    }
+
     public CityDirectString(ICity c)
     {
         Id = c.Id;

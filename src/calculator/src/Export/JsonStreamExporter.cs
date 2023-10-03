@@ -13,15 +13,13 @@ namespace calculator.Export;
 
 public class JsonStreamExporter
 {
-    public static Task<byte[]> GetCitiesWithStringSteps()
+    public static Task<byte[]> GetCitiesWithStringSteps(string path)
     {
-        string path = FileHandler.GetJsonPath();
         return File.ReadAllBytesAsync(path);
     }
 
-    public static Task<byte[]> GetCitiesWithDirectString()
+    public static Task<byte[]> GetCitiesWithDirectString(string path)
     {
-        string path = FileHandler.GetCityDirectJsonPath();
         return File.ReadAllBytesAsync(path);
     }
 }
