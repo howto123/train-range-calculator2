@@ -48,9 +48,15 @@ public static class LoginApi
                 var token = tokenManager.Create(claims);
 
                 response.Cookies.Append("token", token);
+
+                Console.WriteLine("Login succeeded at : " + DateTime.UtcNow);
+                
                 return Results.Ok("Successful!");
             }
-            
+
+            // To Do Logging?
+            Console.WriteLine("Login failed at : " + DateTime.UtcNow);
+
             return Results.Problem($"Sorry, login failed", null, 401);
         });
     }

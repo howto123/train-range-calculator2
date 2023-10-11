@@ -27,7 +27,7 @@ public static class UpdateApi
             int stepNumbers = Int32.Parse(app.Configuration["Calculator:stepNumbers"]!);
             calculator.Execute(stepNumbers);
 
-            return Results.Ok("Another answer from the server.");
+            return Results.Ok("Upload successful");
         }).RequireAuthorization();
         
 
@@ -40,7 +40,6 @@ public static class UpdateApi
 
             var bytes = await calculator.GetBaseFileAsPromiseOfByteStream();
             var mimeType = "text/json";
-            
 
             return Results.File(bytes, mimeType, "dataToBeAddedTo.json");
         });

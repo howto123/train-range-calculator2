@@ -1,28 +1,28 @@
 [
   {
-    "Id": "626ae74f-e3a9-40e1-a8f1-42b0c3121ac6",
-    "Name": "Mamma Mia",
+    "Id": "6502cfbb-019d-4fcc-a25e-58504650053f",
+    "Name": "AnotherCity",
     "Location": [
       23.12,
-      -5.3
+      -4.3
     ],
     "DirectlyReachable": [
       "Basel"
     ]
   },
   {
-    "Id": "b2b11a69-4b09-4b35-9afb-24acf1dac5bb",
+    "Id": "2f22cfb1-307f-403b-942a-b422f94c5780",
     "Name": "Biel",
     "Location": [
       23.12,
       -4.3
     ],
     "DirectlyReachable": [
-      "Bern"
+      "Basel"
     ]
   },
   {
-    "Id": "c38b5fcf-5238-4e51-b935-05569f4b1ef8",
+    "Id": "6e046808-aebe-4cc7-a7b3-4f1667ca9bc1",
     "Name": "Bern",
     "Location": [
       23.12,
@@ -35,7 +35,7 @@
     ]
   },
   {
-    "Id": "ce837c0d-a13a-4ecb-8dd3-1eb79e4732a2",
+    "Id": "a5ee83e8-c396-4823-a37a-7133d52c3e40",
     "Name": "Lausanne",
     "Location": [
       23.12,
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "Id": "092f544a-3e8d-49ee-bc6c-c6344f9c3498",
+    "Id": "b9d3cd12-4f93-4814-a92f-0351a30d6999",
     "Name": "Thun",
     "Location": [
       23.12,
@@ -58,7 +58,7 @@
     ]
   },
   {
-    "Id": "f7fd0d9e-0d33-439e-a3e5-80ddad831e72",
+    "Id": "af776b82-643b-4d25-b67a-6c64bae9d8c7",
     "Name": "Meiringen",
     "Location": [
       23.12,
@@ -67,7 +67,7 @@
     "DirectlyReachable": []
   },
   {
-    "Id": "8571fdcd-3b52-45c3-8c8c-cdeeac8d4e8b",
+    "Id": "12b0c694-ef62-4e5d-a52a-46ff9f5fdc12",
     "Name": "Basel",
     "Location": [
       23.12,
@@ -78,7 +78,7 @@
     ]
   },
   {
-    "Id": "67da588e-b3e0-4b01-aa83-bb8e73e14451",
+    "Id": "428380de-d71f-437b-8d82-011cef59fd64",
     "Name": "Hamburg",
     "Location": [
       23.12,
@@ -90,7 +90,7 @@
     ]
   },
   {
-    "Id": "b59d4d2f-f837-4ccb-8e29-d0a05fe9892b",
+    "Id": "2087d510-8f40-4e45-9f6b-0c3fefd2be7b",
     "Name": "Mailand",
     "Location": [
       23.12,
@@ -101,7 +101,7 @@
     ]
   },
   {
-    "Id": "991a3ebe-4e89-4f8a-b6db-14192bc70890",
+    "Id": "00b13145-e2c1-44e0-a976-9d3000a9b631",
     "Name": "Marseille",
     "Location": [
       23.12,
@@ -112,7 +112,7 @@
     ]
   },
   {
-    "Id": "d7033c17-2ab0-4faf-bd7b-b8f827506582",
+    "Id": "65881c70-2237-4eb5-9333-6a0d9d8f009c",
     "Name": "Paris",
     "Location": [
       23.12,

@@ -64,6 +64,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
+DefaultApi.AddEndpoints(app);
 GetDataApi.AddEndpoints(app);
 UpdateApi.AddEndpoints(app);
 LoginApi.AddEndpoints(app);
