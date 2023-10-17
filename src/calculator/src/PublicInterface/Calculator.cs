@@ -50,6 +50,6 @@ public class Calculator
 
     public Task<byte[]> GetBaseFileAsPromiseOfByteStream()
     {
-        return JsonStreamExporter.GetCitiesWithDirectString(AbsoluteResultPath);
+        return JsonStreamExporter.GetCitiesWithDirectString(AbsoluteBasePath);
     }
 }
