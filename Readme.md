@@ -49,14 +49,10 @@ In production these secrets need to be added via environment variables. Nesting 
 
 ### Todo:
 
- - dotnet run --project src/calculator/calculator.csproj -> Output.json gets created in solution root instead of project root.
- - delete calculator/Program.cs, use it's content elsewhere
- - use decent paths, think about where to store them best
  - possibly move calculator/Exceptions to a domain project (which will be a class library)
  - deploy in europe instead of us
  - inject calculator into endpoints
  - get rid of unnecessary public modifiers
- - test is the frontend can still consume these updated endpoints
 
 ### /web
 
