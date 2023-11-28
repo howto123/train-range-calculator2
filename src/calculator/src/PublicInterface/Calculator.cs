@@ -24,6 +24,13 @@ public class Calculator
         AbsoluteResultPath = RunningDirectory + relativeResultPath;
     }
 
+    public Calculator(CalculatorSettings settings) : this(
+        settings.RelativeBasePath,
+        settings.RelativeResultPath
+    )
+    {
+    }
+
     public void UpdateFromList(List<CityNameList> list)
     {
         JsonReaderWriter.WriteListToJSON(list, AbsoluteBasePath);
@@ -51,5 +58,15 @@ public class Calculator
     public Task<byte[]> GetBaseFileAsPromiseOfByteStream()
     {
         return JsonStreamExporter.GetCitiesWithDirectString(AbsoluteBasePath);
+    }
+
+    public string GetAbsoluteBasePath()
+    {
+        return AbsoluteBasePath;
+    }
+
+    public string GetAbsoluteResultPath()
+    {
+        return AbsoluteResultPath;
     }
 }

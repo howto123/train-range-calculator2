@@ -1,12 +1,9 @@
-using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using calculator.JsonInterface;
 using calculator.Calculator;
 using System;
-using System.Threading.Tasks;
 using calculator.CityTypes;
 
 namespace web.Endpoints;
@@ -14,31 +11,29 @@ public static class UpdateApi
 {
     public static void AddEndpoints(WebApplication app)
     {
-        app.MapPost("/api/update", ([FromBody] List<CityNameList> incomming) =>
-        {
-            // inject this
-            string relativeInput = app.Configuration["FileManager:basePath"]!;
-            string relativeOutput = app.Configuration["FileManager:resultPath"]!;
-            Calculator calculator = new(relativeInput, relativeOutput);
+        app.MapPost
+        (
+            "/api/update",
+            (
+                [FromBody] List<CityNameList> incomming,
+                [FromServices] Calculator calculator
+            )
+                =>
+            {
+                // give the updated data to calculate from
+                calculator.UpdateFromList(incomming);
 
-            // give the updated data to calculate from
-            calculator.UpdateFromList(incomming);
+                // do the calculation
+                int stepNumbers = Int32.Parse(app.Configuration["Calculator:stepNumbers"]!);
+                calculator.Execute(stepNumbers);
 
-            // do the calculation
-            int stepNumbers = Int32.Parse(app.Configuration["Calculator:stepNumbers"]!);
-            calculator.Execute(stepNumbers);
-
-            return Results.Ok("Upload successful");
-        }).RequireAuthorization();
+                return Results.Ok("Upload successful");
+            }
+        ).RequireAuthorization();
         
 
-        app.MapGet("/api/update", async () =>
+        app.MapGet("/api/update", async ([FromServices] Calculator calculator) =>
         {
-            // inject this
-            string relativeInput = app.Configuration["FileManager:basePath"]!;
-            string relativeOutput = app.Configuration["FileManager:resultPath"]!;
-            Calculator calculator = new(relativeInput, relativeOutput);
-
             var bytes = await calculator.GetBaseFileAsPromiseOfByteStream();
             var mimeType = "text/json";
 

@@ -20,7 +20,7 @@ publish:
 
 ### Google cloud run (docker)
 
-tage with project, repo, reponame like here:
+tag with project, repo, reponame like here:
 https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling
 
 Go to google cloud Artifact Registry and get tag name from there. Add actual tag name in the end.

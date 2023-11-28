@@ -1,13 +1,8 @@
 
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
 using web.jwt;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using web.OptionsSetup;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using web.Endpoints;
@@ -15,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using web.Properties;
+using calculator.Calculator;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddUserSecrets<RequiredSecrets>();
@@ -58,7 +54,16 @@ builder.Services.ConfigureOptions<TokenManagerOptionsSetup>();
 
 builder.Services.AddSingleton<TokenManager>();
 
+// inject calculator
+var calculatorSettings = builder.Configuration.GetSection("CalculatorSettings")
+    .Get<CalculatorSettings>()!;
+// string relativeBase = calculatorSettings.RelativeBasePath;
+// string relativeOutput = calculatorSettings.RelativeResultPath;
+Calculator calculator = new(calculatorSettings);
+builder.Services.AddSingleton<Calculator>(calculator);
+
 var app = builder.Build();
+Console.WriteLine(app.Services.GetService<Calculator>()?.GetAbsoluteBasePath());
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
