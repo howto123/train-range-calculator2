@@ -10,7 +10,7 @@ public class CityWithStringSteps : CityBasic
 {
     public List<string>[] Steps { get; init; }
 
-    public CityWithStringSteps(ICityWithSteps city) : base (city)
+    public CityWithStringSteps(CityWithSteps city) : base (city)
     {
         Steps = new List<string>[city.Steps.Length];
         var counter = 0;

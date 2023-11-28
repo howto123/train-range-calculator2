@@ -5,6 +5,8 @@
 `dotnet watch --project src/web/web.csproj`
 
 
+tests: `dotnet test`
+
 publish:
 `dotnet publish -c Release -o out`
 

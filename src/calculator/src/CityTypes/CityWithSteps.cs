@@ -4,26 +4,26 @@ using System;
 using System.Collections.Generic;
 
 namespace calculator.CityTypes;
-public class CityWithSteps : CityDirect, ICityWithSteps
+public class CityWithSteps : CityDirect
 {
-    public List<ICity>[] Steps { get; init; }
+    public List<CityBasic>[] Steps { get; init; }
 
-    private CityWithSteps(int numberOfSteps, ICity city, List<ICityDirect> directList) : base(city)
+    private CityWithSteps(int numberOfSteps, CityBasic city, List<CityDirect> directList) : base(city)
     {
         // step 0 is the city itself, so we need size n+1 
-        Steps = new List<ICity>[numberOfSteps+1];
+        Steps = new List<CityBasic>[numberOfSteps+1];
 
         if ( directList.Find( c => c.Id == city.Id)?.DirectlyReachable?.Contains(city) ?? true)
         {
             throw new Exception($"City {city} could not be created from given list");
         }
 
-        Steps[0] = new List<ICity>() { city };
+        Steps[0] = new List<CityBasic>() { city };
         
         // build step one ad hoc
         var directlyReachable = directList.Find( c => c.Id == city.Id)?.DirectlyReachable;
-        var firstStep = new List<ICity>() { city } ?? new List<ICity>();
-        firstStep.AddRange(directlyReachable ?? new List<ICity>());
+        var firstStep = new List<CityBasic>() { city } ?? new List<CityBasic>();
+        firstStep.AddRange(directlyReachable ?? new List<CityBasic>());
         Steps[1] = firstStep;
 
         
@@ -33,9 +33,9 @@ public class CityWithSteps : CityDirect, ICityWithSteps
         }
     }
 
-    private static List<ICity> CreateStepFromLastStep(List<ICity> lastStep, List<ICityDirect> cityList)
+    private static List<CityBasic> CreateStepFromLastStep(List<CityBasic> lastStep, List<CityDirect> cityList)
     {
-        List<ICity> result = new (lastStep);
+        List<CityBasic> result = new (lastStep);
         lastStep.ForEach( last => {
 
             var reachableFromLast = cityList.Find( c => c.Id == last.Id)?.DirectlyReachable;
@@ -51,9 +51,9 @@ public class CityWithSteps : CityDirect, ICityWithSteps
         return result;
     }
 
-    public static List<ICityWithSteps> CreateListFromList (int numberOfSteps, List<ICityDirect> directList)
+    public static List<CityWithSteps> CreateListFromList (int numberOfSteps, List<CityDirect> directList)
     {
-        List<ICityWithSteps> result = new();
+        List<CityWithSteps> result = new();
 
         foreach( var city in directList )
         {
@@ -67,7 +67,7 @@ public class CityWithSteps : CityDirect, ICityWithSteps
         var stepString = string.Empty;
         var stepNumber = 0;
 
-        foreach( List<ICity> list in Steps )
+        foreach( List<CityBasic> list in Steps )
         {
             stepString += $"Step {stepNumber++}: ";
             list?.ForEach( city => stepString += $" {city.Name}");

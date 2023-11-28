@@ -7,13 +7,14 @@ using calculator.JsonInterface;
 using calculator.Calculator;
 using System;
 using System.Threading.Tasks;
+using calculator.CityTypes;
 
 namespace web.Endpoints;
 public static class UpdateApi
 {
     public static void AddEndpoints(WebApplication app)
     {
-        app.MapPost("/api/update", ([FromBody] List<CityJson> incomming) =>
+        app.MapPost("/api/update", ([FromBody] List<CityNameList> incomming) =>
         {
             // inject this
             string relativeInput = app.Configuration["FileManager:basePath"]!;

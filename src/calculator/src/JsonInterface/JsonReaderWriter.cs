@@ -6,7 +6,7 @@ using calculator.CityTypes;
 namespace calculator.JsonInterface;
 public class JsonReaderWriter
 {
-    public static ICityDirectString ReadOneFromJSON(string pathWithFilename)
+    public static CityNameList ReadOneFromJSON(string pathWithFilename)
     // creates city from json file
     {
         var readFromFile = string.Empty;
@@ -16,11 +16,11 @@ public class JsonReaderWriter
         }
         
         // Deserialisation needs a class.
-        CityJson? city;
+        CityNameList? city;
 
         try
         {
-            city = JsonSerializer.Deserialize<CityJson>(readFromFile);
+            city = JsonSerializer.Deserialize<CityNameList>(readFromFile);
         }
         catch (JsonException)
         {
@@ -31,7 +31,7 @@ public class JsonReaderWriter
             throw new JsonReaderWriterException($"ReadOneFromJSON from {pathWithFilename} failed");
     }
     
-    public static List<ICityDirectString> ReadListFromJSON(string pathWithFilename)
+    public static List<CityNameList> ReadListFromJSON(string pathWithFilename)
     // creates city from json file
     {
         var readFromFile = string.Empty;
@@ -42,11 +42,11 @@ public class JsonReaderWriter
         
         // Deserialisation needs a class. We can use list as it works fine
         // and dublicates will be removed when we create the List.
-        List<CityJson>? list;
+        List<CityNameList>? list;
 
         try
         {
-            list = JsonSerializer.Deserialize<List<CityJson>>(readFromFile);
+            list = JsonSerializer.Deserialize<List<CityNameList>>(readFromFile);
         }
         catch (JsonException)
         {
@@ -56,10 +56,10 @@ public class JsonReaderWriter
         if (list == null)
             throw new JsonReaderWriterException($"ReadSetFromJSON from {pathWithFilename} failed");
 
-        return new List<ICityDirectString>(list);
+        return new List<CityNameList>(list);
     }
 
-    public static void WriteListToJSON(List<ICity> list, string pathWithFilename)
+    public static void WriteListToJSON(List<CityBasic> list, string pathWithFilename)
     {
         string str = JsonSerializer.Serialize(list, new JsonSerializerOptions() {WriteIndented=true}) ?? string.Empty;
 
@@ -67,7 +67,7 @@ public class JsonReaderWriter
         toFile.Write(str);
     }
 
-    public static void WriteListToJSON(List<CityJson> list, string pathWithFilename)
+    public static void WriteListToJSON(List<CityNameList> list, string pathWithFilename)
     {
         string str = JsonSerializer.Serialize(list, new JsonSerializerOptions() {WriteIndented=true}) ?? string.Empty;
 
@@ -75,7 +75,7 @@ public class JsonReaderWriter
         toFile.Write(str);
     }
 
-    public static void WriteStepListToJSON(List<ICityWithSteps> list, string pathWithFilename)
+    public static void WriteStepListToJSON(List<CityWithSteps> list, string pathWithFilename)
     {
         List<CityWithStringSteps> simplerList = new();
         list.ForEach( cityWithSteps => simplerList.Add(new CityWithStringSteps(cityWithSteps)));

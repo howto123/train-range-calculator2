@@ -7,7 +7,7 @@ namespace calculator_test;
 [TestClass]
 public class CityWithStepsTest
 {
-    private readonly string pathSetA = @"C:\Users\Thinkpad53u\Files\Dev\99 ProjectIdeas\train-range-calculator\test\testSetA.json";
+    private readonly string pathSetA = @"C:\Users\Thinkpad53u\Files\Dev\99 ProjectIdeas\train-range\train-range-calculator2\tests\calculator_test\testSetA.json";
     
     [TestMethod]
     public void CreateFromList_CreatesCorrectList()

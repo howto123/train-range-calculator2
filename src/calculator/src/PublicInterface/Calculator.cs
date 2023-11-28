@@ -24,7 +24,7 @@ public class Calculator
         AbsoluteResultPath = RunningDirectory + relativeResultPath;
     }
 
-    public void UpdateFromList(List<CityJson> list)
+    public void UpdateFromList(List<CityNameList> list)
     {
         JsonReaderWriter.WriteListToJSON(list, AbsoluteBasePath);
     }
@@ -32,9 +32,9 @@ public class Calculator
     public void Execute(int numberOfSteps)
     {
         try{
-            List<ICityDirectString> directStringList = JsonReaderWriter.ReadListFromJSON(AbsoluteBasePath);
-            List<ICityDirect> directList = CityDirect.GetManyFromStringList(directStringList);
-            List<ICityWithSteps> stepList = CityWithSteps.CreateListFromList(numberOfSteps, directList);
+            List<CityNameList> directStringList = JsonReaderWriter.ReadListFromJSON(AbsoluteBasePath);
+            List<CityDirect> directList = CityDirect.GetManyFromStringList(directStringList);
+            List<CityWithSteps> stepList = CityWithSteps.CreateListFromList(numberOfSteps, directList);
             JsonReaderWriter.WriteStepListToJSON(stepList, AbsoluteResultPath);
         }
         catch (Exception e)

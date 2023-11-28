@@ -1,40 +1,43 @@
 using calculator.CityTypes;
 using calculator.JsonInterface;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace calculator_test;
 
 [TestClass]
-public class CityDirectTest
+public class CityNameListTest
 // TODO: now, this is dependent on input files as well as JsonReaderWriter.
 // An interface and different sources of the private attributes configurable by a setting
 // or a concrete implementation of the interface would be better
 
 {
-    private readonly string pathSetA = @"C:\Users\Thinkpad53u\Files\Dev\99 ProjectIdeas\train-range-calculator\test\testSetA.json";
-    private readonly string pathCityX = @"C:\Users\Thinkpad53u\Files\Dev\99 ProjectIdeas\train-range-calculator\test\testCityX.json";
-    //private readonly string pathSetB = @"C:\Users\Thinkpad53u\Files\Dev\99 ProjectIdeas\train-range-calculator\test\testSetB.json";
+    
+    private readonly string pathSetA = $@"{System.IO.Directory.GetCurrentDirectory()}\testSetA.json";
+    private readonly string pathCityX = $@"{System.IO.Directory.GetCurrentDirectory()}\testCityX.json";
+    //private readonly string pathSetB = @"C:\Users\Thinkpad53u\Files\Dev\99 ProjectIdeas\train-range\train-range-calculator2\test\testSetB.json";
 
-    private readonly List<ICityDirectString> citiesAsStringSet;
-    private readonly ICityDirectString cityDirectString;
-    private readonly List<ICity> citySet;
+    private readonly List<CityNameList> citiesAsStringSet;
+    private readonly CityNameList cityNameList;
+    private readonly List<CityBasic> citySet;
 
-    public CityDirectTest()
+    public CityNameListTest()
     {
         citiesAsStringSet  = JsonReaderWriter.ReadListFromJSON(pathSetA);
-        cityDirectString  = JsonReaderWriter.ReadOneFromJSON(pathCityX);
-        citySet  = new List<ICity>(citiesAsStringSet);
+        cityNameList  = JsonReaderWriter.ReadOneFromJSON(pathCityX);
+        citySet  = new List<CityBasic>(citiesAsStringSet);
         
     }
 
     [TestMethod]
     public void GetFromStringSet_HasCorrectDirectlyReachable()
     {
-        var realReachable = CityDirect.GetOneFromStringList(cityDirectString, citiesAsStringSet)
+        Debug.WriteLine($"Path is:");
+        Debug.WriteLine(System.IO.Directory.GetCurrentDirectory());
+        var realReachable = CityDirect.CreateValid(cityNameList, citiesAsStringSet)
             .DirectlyReachable;
 
-        var shouldBeList = new List<ICity>(citySet).FindAll(c => c.Name == "Bern").OrderBy(x => x);
+        var shouldBeList = new List<CityBasic>(citySet).FindAll(c => c.Name == "Bern").OrderBy(x => x);
         
         Assert.IsTrue(realReachable.OrderBy(x => x).SequenceEqual(shouldBeList));
     }
@@ -45,11 +48,11 @@ public class CityDirectTest
         var iCityDirectSet = CityDirect.GetManyFromStringList(citiesAsStringSet);
 
         // is
-        var cityDirectList = new List<ICityDirect>(iCityDirectSet);
+        var cityDirectList = new List<CityDirect>(iCityDirectSet);
         var mayBeThun = cityDirectList.Find( c => c.Name == "Thun" );
         var mayBeMeiringen = cityDirectList.Find( c => c.Name == "Thun" );
 
-        var shouldBeList = new List<ICity>(citySet);
+        var shouldBeList = new List<CityBasic>(citySet);
         var shoulBeThun = shouldBeList.Find( c => c.Name == "Thun" );
         var shoulBeMeiringen = shouldBeList.Find( c => c.Name == "Thun" );
 

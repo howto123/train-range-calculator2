@@ -1,15 +1,10 @@
+﻿namespace City;
 
-
-
-
-using System;
-
-namespace calculator.CityTypes;
-public class CityBasic
+public class Basic
 {
     public Guid Id { get; init; } = Guid.NewGuid();
-    public string Name { get; init; } = "";
-    public double[] Location { get; init; } = { 0.0, 0.0 };
+    public string Name { get; init; }
+    public double[] Location { get; init; }
 
     public CityBasic(string name, double[] location)
     {
@@ -19,15 +14,10 @@ public class CityBasic
         Location = location;
     }
 
-    public CityBasic(CityBasic city)
+    public CityBasic(ICity city)
     {
         Id = city.Id;
         Name = city.Name;
         Location = city.Location;
-    }
-
-    public CityBasic()
-    {
-        // default
     }
 }

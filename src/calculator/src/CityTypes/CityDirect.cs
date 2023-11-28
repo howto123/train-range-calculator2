@@ -6,26 +6,27 @@ using calculator.JsonInterface;
 
 namespace calculator.CityTypes;
 
-public class CityDirect : ICityDirect
+public class CityDirect : CityBasic
 {
-    public Guid Id { get; init; } = Guid.NewGuid();
-    public string Name { get; init; }
-    public double[] Location { get; init; }
-    public List<ICity> DirectlyReachable { get; init;} = new List<ICity>();
+    public List<CityBasic> DirectlyReachable { get; init;} = new List<CityBasic>();
 
-    public CityDirect(ICity c)
+    public CityDirect(CityBasic c)
     {
         Id = c.Id;
         Name = c.Name;
         Location = c.Location;
     }
 
-    public static ICityDirect GetOneFromStringList(
-        ICityDirectString cityDirectString,
-        List<ICity> cityList)
+
+    // Checks if names correspond to cities
+    public static CityDirect CreateValid
+    (
+        CityNameList cityDirectString,
+        List<CityBasic> cityList
+    )
     {
        
-        ICityDirect result = new CityDirect(cityDirectString);
+        CityDirect result = new(cityDirectString);
 
         cityDirectString.DirectlyReachable?.ForEach( nameString => {
             var cityBelongingToName = cityList.Find( c => c.Name == nameString)
@@ -37,21 +38,22 @@ public class CityDirect : ICityDirect
         return result;
     }
 
-    public static ICityDirect GetOneFromStringList(
-        ICityDirectString cityDirectString,
-        List<ICityDirectString> cityList)
+    public static CityDirect CreateValid
+    (
+        CityNameList cityDirectString,
+        List<CityNameList> cityList)
     {
-        var simpleList = new List<ICity>();
-        cityList.ForEach( c => simpleList.Add(c));
-        return GetOneFromStringList(cityDirectString, simpleList);
+        var cityBasicList = new List<CityBasic>();
+        cityList.ForEach( c => cityBasicList.Add(c));
+        return CreateValid(cityDirectString, cityBasicList);
     }
 
-    public static List<ICityDirect> GetManyFromStringList(List<ICityDirectString> stringList)
+    public static List<CityDirect> GetManyFromStringList(List<CityNameList> stringList)
     {
-        var result = new List<ICityDirect>();
+        var result = new List<CityDirect>();
 
         stringList.ForEach( c => {
-            var cityDirect = GetOneFromStringList(c, stringList);
+            var cityDirect = CreateValid(c, stringList);
             result.Add(cityDirect);
         });
 
@@ -76,7 +78,7 @@ DirectlyReachable:
 
     }
 
-    public static bool CompareICities(ICity one, ICity two)
+    public static bool CompareICities(CityBasic one, CityBasic two)
     {
         return one.Id == two.Id
             && one.Name == two.Name

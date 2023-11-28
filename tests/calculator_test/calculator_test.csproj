@@ -19,4 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\calculator\calculator.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="testSetA.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="testCityX.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
