@@ -15,7 +15,7 @@ publish:
 `docker build -t backend .`
 (current build time without caching: 70s)
 
-`docker run --rm -p 5001:80 -e TokenManager__SecretKey=myHashKey backend`
+`docker run --rm -p 5001:80 -e TokenManager__SecretKey=myHashKey -e loginpassword=myLoginPassword backend`
 
 
 ### Google cloud run (docker)
@@ -28,6 +28,7 @@ Go to google cloud Artifact Registry and get tag name from there. Add actual tag
 Go to cloud run service, create (or update) service
 
 Set secret TokenManager__SecretKey -> Expose as Environment Variable
+Set secret loginpassword -> Expose as Environment Variable
 
 result:
 https://calculator-k42qgew2la-uc.a.run.app/api
@@ -51,10 +52,7 @@ In production these secrets need to be added via environment variables. Nesting 
 
 ### Todo:
 
- - possibly move calculator/Exceptions to a domain project (which will be a class library)
- - deploy in europe instead of us
- - inject calculator into endpoints
- - get rid of unnecessary public modifiers
+ - update endpoints in readme
 
 ### /web
 
