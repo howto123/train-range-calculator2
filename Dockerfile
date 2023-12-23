@@ -16,6 +16,6 @@ COPY --from=build-env /App/out .
 ENV PORT=80
 EXPOSE 80
 
-#ENV ASPNETCORE_URLS=http://localhost:80
+ENV ASPNETCORE_URLS=http://+:80
 
 ENTRYPOINT ["dotnet", "web.dll"]
